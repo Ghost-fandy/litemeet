@@ -6,7 +6,7 @@
 <map id="map" 
 	longitude="{{longitude}}" 
 	latitude="{{latitude}}"
-	scale="14" 
+	scale="10" 
 	controls="{{controls}}" 
 	bindcontroltap="controltap" 
 	markers="{{markers}}" 
@@ -14,7 +14,8 @@
 	polyline="{{polyline}}" 
 	bindregionchange="regionchange" 
 	show-location="true" 
-	class="map-common">
+	class="map-common"
+	circles="{{circles}}">
 </map>
 
 </view>

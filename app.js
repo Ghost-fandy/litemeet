@@ -1,12 +1,13 @@
 //app.js
 App({
-  data: {
-    systemInfo: {}
-  },
   onLaunch: function () {
     var systemInfo = wx.getSystemInfoSync()
     this.globalData.windowHeight = systemInfo.windowHeight
-    this.data.systemInfo = systemInfo
+    this.globalData.systemInfo = systemInfo
+    var userInfo = wx.getStorageSync("userInfo")
+    if(userInfo) {
+      this.globalData.userInfo = userInfo
+    }
   },
   getLocationInfo: function(cb){
     var that = this;
@@ -29,8 +30,10 @@ App({
     }
   },
   globalData:{
+    systemInfo: null,
     imgPath: "https://cdn.fandypeng.com/vraxueche/",
     windowHeight: 0,
-    locationInfo: null
+    locationInfo: null,
+    userInfo: null
   }
 })
