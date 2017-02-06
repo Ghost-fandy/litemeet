@@ -6,7 +6,9 @@ Page({
     phoneNum: 0,
     smsCode: 0,
     phoneFocus: true,
-    smsCodeFocus: false
+    smsCodeFocus: false,
+    smsBtnTitle: "获取验证码",
+    smsBtnStyle: "weui-btn weui-btn_disabled weui-btn_warn"
   },
   onLoad: function () {
     console.log('onLoad')
@@ -37,9 +39,10 @@ Page({
       })
     }
   },
+  //请求验证码
   requestSmsCode: function(){
     wx.request({
-      url: 'http://admin.axueche.com:8080/driverManager/driverApi/vr/register', //仅为示例，并非真实的接口地址
+      url: 'https://www.axueche.com/driverManager/driverApi/vr/register',
       data: {
          stuPhone: this.data.phoneNum ,
       },
@@ -47,7 +50,7 @@ Page({
           'content-type': 'application/json'
       },
       success: function(res) {
-        console.log(res.data)
+
       }
     })
   },
